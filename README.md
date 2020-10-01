@@ -1,5 +1,7 @@
 # Slow Request Simulator (SRS)
 
+SRS is a simple Go program that simulates a timeout bounded HTTP server where  execution time of each request can be set using a url query param.
+
 ## Server
 `./srs 5`
 
