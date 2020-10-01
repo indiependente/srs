@@ -40,13 +40,13 @@ func hello2(timeout time.Duration) func(w http.ResponseWriter, req *http.Request
 		<-ctx.Done()
 		err = ctx.Err()
 		fmt.Println("server:", err)
-		if errors.Is(err, context.DeadlineExceeded) {
+		switch {
+		case errors.Is(err, context.Canceled):
+			fmt.Fprintf(w, "all good\n")
+		default:
 			log.Printf("error %q\n", err)
 			log.Printf("forcing lock.Release()\n")
 			http.Error(w, err.Error(), http.StatusInternalServerError)
-			return
 		}
-
-		fmt.Fprintf(w, "all good\n")
 	}
 }
