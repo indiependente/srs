@@ -1,7 +1,7 @@
 # Slow Request Simulator (SRS)
 
 ## Server
-`./srs n`
+`./srs 5`
 
 ```bash
     ./srs n
