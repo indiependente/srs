@@ -14,5 +14,6 @@ func main() {
 		log.Fatal(err)
 	}
 	http.HandleFunc("/hello", hello(time.Duration(timeout)*time.Second))
+	http.HandleFunc("/hello2", hello2(time.Duration(timeout)*time.Second))
 	log.Fatal(http.ListenAndServe(":8090", nil))
 }
