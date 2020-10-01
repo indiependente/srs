@@ -1,15 +1,20 @@
 # Slow Request Simulator (SRS)
 
 ## Server
-```
-    ./example n
+`./srs n`
+
+```bash
+    ./srs n
 
         n must be an integer representing the number of seconds before the server times out
 ```
 
 ## Client
-```
+`curl localhost:8090/hello\?t=6`
+
+```bash
     curl localhost:8090/hello\?t=6
+    
         t must be an integer representing the number of seconds the request will take to complete
 ```
 
